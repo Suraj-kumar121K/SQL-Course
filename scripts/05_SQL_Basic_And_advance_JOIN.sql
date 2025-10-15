@@ -111,3 +111,23 @@ SELECT
 FROM customers AS C
 FULL JOIN orders AS O
 ON C.id = O.customer_id
+
+/*                        Right AntI Join                    
+   Return Rows from Right that has No Match in left. 
+*/
+
+-- Get all Orders Without matching customer.
+SELECT *
+FROM customers AS C
+RIGHT JOIN orders AS O
+ON C.id = O.customer_id
+WHERE C.id IS NULL
+
+/*            WHAT IS CROSS JOINS
+  Combines every rows from Left with every rows from Right
+*/
+
+-- Generate all possible combinations of customers and orders
+SELECT *
+FROM customers
+CROSS JOIN orders 
