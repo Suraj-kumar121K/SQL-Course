@@ -131,3 +131,72 @@ WHERE C.id IS NULL
 SELECT *
 FROM customers
 CROSS JOIN orders 
+
+/*                            MULTIPLE JOINS TABLE
+multiple joins allow you to combine data from more than one table in a single query.       
+
+-- Task:- Using SalesDB, Retrieve a list of all orders, along with the related Customer, Product and 
+   Employee details. For each oder, display
+   order ID, Customer`s name, Product Name, Sales, Price, Sales Person`s Name.
+*/
+
+-- 1st step
+SELECT  
+     OrderID,
+     Sales 
+FROM Sales.Orders AS o
+
+
+-- 2nd step
+SELECT  
+     o.OrderID,
+     o.Sales,
+     c.FirstName,
+     c.LastName
+FROM Sales.Orders AS o
+LEFT JOIN Sales.Customers AS c
+ON o.CustomerID = c.CustomerID
+
+-- 4th step
+SELECT  
+     o.OrderID,
+     o.Sales,
+     c.FirstName,
+     c.LastName,
+     p.Product AS ProductName,
+     p.Price
+FROM Sales.Orders AS o
+LEFT JOIN Sales.Customers AS c
+ON o.CustomerID = c.CustomerID
+LEFT JOIN Sales.Products AS p
+ON o.ProductID = p.ProductID 
+
+-- 5rd step
+SELECT  
+     o.OrderID,
+     o.Sales,
+     c.FirstName AS CustomerFirstName,
+     c.LastName AS CustomerLastName,
+     p.Product AS ProductName,
+     p.Price,
+     e.FirstName AS EmployeeFirstName,
+     e.LastName AS EmployeeLastName
+FROM Sales.Orders AS o
+LEFT JOIN Sales.Customers AS c
+ON o.CustomerID = c.CustomerID
+LEFT JOIN Sales.Products AS p
+ON o.ProductID = p.ProductID 
+LEFT JOIN Sales.Employees AS e
+ON O.SalesPersonID = e.EmployeeID
+
+
+-- SalesDB Table
+SELECT * FROM Sales.Customers;
+
+SELECT * FROM Sales.OrdersArchive;
+
+SELECT * FROM Sales.Employees;
+
+SELECT * FROM Sales.Orders;
+
+SELECT * FROM Sales.Products;
