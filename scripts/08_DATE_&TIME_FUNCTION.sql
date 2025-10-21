@@ -467,3 +467,87 @@ CAST('2025-08-20' as datetime2) AS [String to datetime],
 CreationTime,
 CAST(CreationTime AS DATE) AS [Datetime to Date]
 FROM Sales.Orders
+
+/* CALCULATIONS
+1. DATEADD():- Adds or subtracts a specific time interval to/from a date
+
+   Syntax
+       DATEADD(part, interval, date)
+   Example
+       DATEADD(year, 2, OrderDate)
+*/
+SELECT
+OrderID,
+OrderDate,
+DATEADD(day, 10, OrderDate) AS TenDayBefore,
+DATEADD(month, 3, OrderDate) AS ThreeMonthLater,
+DATEADD(year, 2, OrderDate) AS TwoMonthLater
+FROM Sales.Orders
+
+/* CALCULATIONS
+1. DATEDIFF():- Find the difference between two dates.
+
+   Syntax
+       DATEDIFF(part, start_date, end_date)
+
+   Example     
+       DATEDIFF(year, OrderDate, ShipDate)
+*/
+SELECT
+EmployeeID,
+BirthDate,
+DATEDIFF(year, BirthDate, GETDATE()) AGE
+FROM Sales.Employees
+
+-- Find the average shipping duration in days for each month
+SELECT
+OrderID,
+OrderDate,
+ShipDate,
+DATEDIFF(day, OrderDate, ShipDate) Day2ship
+FROM Sales.Orders
+
+SELECT
+MONTH(OrderDate) AS OrderDate,
+AVG(DATEDIFF(day, OrderDate, ShipDate)) AVGShip
+FROM Sales.Orders
+GROUP BY MONTH(OrderDate)
+
+-- Time Gap Analysis
+-- Find the number of days between each order and the previous order
+SELECT 
+     OrderID,
+     OrderDate CurrentOrderDate,
+LAG(OrderDate) OVER (ORDER BY orderDate) PreviousOrderDate,
+DATEDIFF(day, LAG(OrderDate) OVER (ORDER BY orderDate), OrderDate) NrOfDays
+FROM Sales.Orders
+
+/* Validation
+1. ISDATE():- Check if a value is a date
+   Return 1 if the string value is a valid date
+
+   Syntax
+       ISDATE(value)
+
+   Example     
+       ISDATE('2025-08-20')
+*/
+SELECT
+ISDATE('123') DateCheck1,
+ISDATE('2025-08-20') DateCheck2,
+ISDATE('20-08-2025') DateCheck3,
+ISDATE('2025') DateCheck4,
+ISDATE('08') DateCheck5
+
+SELECT
+--    CAST(OrderDate AS DATE) OrderDate
+     ISDATE(OrderDate),
+     CASE WHEN ISDATE(OrderDate) = 1 THEN CAST(OrderDate AS DATE)
+         ELSE '9999-01-01'
+     END NewOrderDate
+FROM
+(
+      SELECT '2025-08-20' AS OrderDate UNION
+      SELECT '2025-08-21' UNION
+      SELECT '2025-08-23' UNION
+      SELECT '2025-08'
