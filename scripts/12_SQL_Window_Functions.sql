@@ -70,7 +70,7 @@ f(x) WINDOW FUNCTIONS
       Conditional Logic:- SUM(CASE WHEN Sales > 100 THEN 1 ELSE 0 END) OVER (ORDER BY OrderDate) 
  
                                         Over Clause
-                                            \/
+                                           \/
 Window Function  __________________________||________________________________________________________                         
 _______________|  |                                     Order Clause                                  |
       |        |  |                                          |                                        | 
