@@ -1,5 +1,5 @@
-       WHAT IS SUBQUERY
-      A Query Inside Another Queary
+         WHAT IS SUBQUERY
+     --> A subquery (also called an inner query or nested query) is a query inside another SQL query.
 
       Non-Correlated Subquery                         Correlated Subquery 
       Subquery is independent of the main query       Subquery is dependent of the main query
