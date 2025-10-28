@@ -1,4 +1,6 @@
 --> WHAT IS Window Functions 
+    Window Function performs a calculation across a set of table rows that are related to the current row.
+
    Perform calculations(e.g. aggregation) on a specific subset of data, without losing the level of details of rows.
   |-----------------------------|---------------------------|
   |       GROUP BY              |        WINDOW             |
@@ -93,7 +95,21 @@ _______________|  |                                     Order Clause            
 
   Partition By | Total sales for each combination of Product and Order  Status
   Combined-    | Sum(Sales) OVER (PARTITION BY Product, OrderStatus)
-/*-----------------------------------------------------------------------------------------------------------*/ 
+
+--> Common Window Functions
+|      Function     |             Description                      |
+| ----------------- | -------------------------------------------- |
+| `ROW_NUMBER()`    | Assigns a unique number to each row in order |
+| `RANK()`          | Gives rank with gaps for ties                |
+| `DENSE_RANK()`    | Gives rank without gaps for ties             |
+| `NTILE(n)`        | Divides rows into `n` equal groups           |
+| `SUM()`           | Running or cumulative total                  |
+| `AVG()`           | Average within a group (window)              |
+| `MIN()` / `MAX()` | Minimum or maximum within a window           |
+| `LAG()`           | Value from a **previous row**                |
+| `LEAD()`          | Value from a **next row**                    |
+
+/*-------------------------------------------------------------------------------------------------------------------------------------------*/ 
 
 -- Find the total sales across all orders
 SELECT
