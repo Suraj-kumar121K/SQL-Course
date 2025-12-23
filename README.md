@@ -1,7 +1,7 @@
 # SQL Ultimate Course
 
 Welcome to the **SQL Ultimate Course** repository! 🚀   
-This course will cover everything you need to master SQL!
+This course will cover everything you need to master SQL! 
 
 ---
 
