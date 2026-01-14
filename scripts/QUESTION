@@ -155,6 +155,26 @@ WHERE SAL > 2000;
 35 --> WAQTD NAMES OF EMPLOYEES ALONG WITH ANNUAL SALARY FOR THE EMPLOYEES WORKING AS MANAGER OR CLERK IN DEPT 10 OR 30.
 
 36 --> WAQTD ALL THE DETAILS ALONG WITH ANNUAL SALARY IF SAL IS BETWEEN 1000 AND 4000 AND ANNUAL SALARY MORE THAN 15000.
-
 SELECT * FROM EMP
 WHERE SAL BETWEEN 1000 AND 4000 AND SAL * 12 > 15000
+
+37 --> List all the employees whose commission is NULL.
+38 --> List all the employees who don't have a reporting manager. (i.e., reporting manager / manager is NULL)
+39 --> List all the salesmen in department 30.
+40 --> List all the salesmen in department number 30 and having salary greater than 1500.
+41 --> List all the employees whose name starts with 'S' or 'A'.
+42 --> List all the employees except those who are working in department 10 & 20.
+43 --> List all the employees whose name does not start with 'S'.
+44 --> List all the employees who are having reporting managers in department 10. (or possibly: employees who have reporting manager NULL / no reporting manager in dept 10 context — wording varies slightly)
+45 --> List all the employees in department 10 whose commission is NULL and working as CLERK.
+46 --> List all the employees who don't have a reporting manager in department 10 or 30.
+47 --> List all the salesmen in department 30 with salary more than 2450.
+48 --> List all the analysts in department number 20 and having salary greater than 2500.
+49 --> List all the employees whose name starts with 'M' or 'J'.
+50 --> List all the employees with annual salary (except those who are working...) — (incomplete in text, but appears to be something like list employees with annual salary condition, possibly excluding certain depts or roles)
+51 --> List the employees who are working in department 30 whose name does not end with 'ES' or 'R'.
+52 --> List all the employees who are having reporting managers in department 10 along with 10% hike in salary. (or display with 10% salary hike)
+53 --> Display/salesman's all the employee who are having 'E' as the last but one character in Ename (i.e., second last character is 'E') but salary having exactly... (incomplete, but seems salary condition after that)
+54 --> Display all the employees who are joined after year 81. (i.e., hired after 1981)
+55 --> Display all the employees who are joined in February. (i.e., hired in February any year)
+56 --> List the employees (managers and clerks) who are not working as managers and clerks in department 10 and 20 with a salary in the range of 1000 to 3000.
