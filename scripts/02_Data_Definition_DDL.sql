@@ -7,7 +7,7 @@
    Table of Contents:
      1. CREATE - Creating Tables
      2. ALTER - Modifying Table Structure
-     3. DROP - Removing Tables
+     3. DROP - Removing Tables 
 =================================================================================
 */
 
