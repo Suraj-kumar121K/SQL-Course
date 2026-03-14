@@ -1,0 +1,182 @@
+USE SQL_1
+
+CREATE TABLE STD(
+id INT PRIMARY KEY,
+name VARCHAR(20),
+age INT,
+grade CHAR(1)
+)
+
+-- DQL – SELECT (1–20)
+-- 1. Display all records from std.
+SELECT * FROM STD
+
+-- 2. Display only name and grade.
+SELECT name, grade
+FROM std
+
+-- 3. Show students with age = 14.
+SELECT * FROM std
+where age = 14
+
+-- 4. Show students with age = 15.
+SELECT name, age FROM std
+WHERE age = 15
+
+-- 5. Show students with grade 'A'.
+SELECT name, grade FROM std
+WHERE grade = 'A'
+
+-- 6. Show students with grade 'B'.
+SELECT * FROM std
+WHERE grade = 'B'
+
+-- 7. Show students with grade 'C'.
+SELECT * FROM std
+WHERE grade = 'C'
+
+-- 8. Show students with age > 14.
+SELECT * FROM std
+WHERE age > 14
+
+-- 9. Show students with age < 15.
+SELECT * FROM std
+WHERE age < 14
+
+-- 10. Sort students by name ascending.
+SELECT * FROM std
+ORDER BY name ASC
+
+-- 11. Sort students by age descending.
+SELECT * FROM std
+ORDER BY name DESC
+
+-- 12. Display students whose name starts with 'A'.
+SELECT * FROM std
+WHERE name LIKE 'A%'
+
+-- 13. Display students whose name ends with 'n'.
+SELECT * FROM std
+WHERE name LIKE '%n'
+
+-- 14. Display students whose name contains 'a'.
+SELECT * FROM std
+WHERE name LIKE '%a%'
+
+-- 15. Count total students.
+SELECT COUNT(*) AS TOTAL_COUNT
+FROM std
+
+-- 16. Find maximum age.
+SELECT MIN(age) AS MIN_AGE
+FROM std
+
+-- 17. Find minimum age.
+SELECT MAX(age) AS MAX_AGE
+FROM std
+
+-- 18. Find average age.
+SELECT AVG(age) AS AVG_AGE
+FROM std
+
+-- 19. Show distinct grades.
+SELECT DISTINCT grade FROM std
+
+-- 20. Display students with grade IN ('A','B').
+SELECT * FROM std
+WHERE grade IN ('A','B')
+
+-- DML – INSERT, UPDATE, DELETE (21–30)
+-- 21. Insert a new student (21,'Zara',14,'A').
+INSERT INTO std(id, name, age, grade) VALUES
+(21, 'Suraj', 14, 'A')
+
+-- 22. Insert two students in one query.
+INSERT INTO STD(id, name, age, grade) VALUES
+(21, 'SURAJ', 14, 'A')
+
+
+-- 23. Update grade of Suraj to 'B'.
+UPDATE std
+SET grade = 'B'
+WHERE name = 'Suraj'
+
+-- 24. Update age of Mohan to 16.
+UPDATE STD
+SET age = 13
+WHERE name = 'Mohan'
+
+-- 25. Update grade 'C' to 'B'.
+UPDATE std
+SET grade = 'C'
+WHERE grade = 'B'
+
+-- 26. Delete the student where id = 5.
+DELETE FROM std
+WHERE id = 23
+
+-- 27. Delete students whose grade = 'C'.
+DELETE FROM std
+WHERE grade = 'C'
+
+-- 28. Update all students age to age + 1.
+UPDATE STD
+SET age = age + 2
+WHERE age = 15
+
+
+-- 29. Insert (22,'Mark',15,'A').
+INSERT INTO STD(id, name, age, grade) VALUES
+(22, 'Kumar', 16, 'A')
+
+-- 30. Delete students where age = 16.
+DELETE FROM STD
+WHERE age = 16
+
+-- DDL – CREATE, ALTER, DROP, TRUNCATE (31–40)
+-- 31. Add a column city VARCHAR(30) to std.
+ALTER TABLE STD
+ADD city VARCHAR(30)
+
+-- 32. Add a column email VARCHAR(50).
+ALTER TABLE STD
+ADD email VARCHAR(50)
+
+-- 33. Change datatype of name to VARCHAR(100).
+ALTER TABLE std
+ALTER COLUMN name VARCHAR(100);
+
+SELECT * FROM STD
+
+-- 34. Rename column grade to student_grade.
+ALTER TABLE STD
+DROP COLUMN grade , student_grade;
+
+
+-- 35. Drop column email.
+ALTER TABLE teachers
+DROP COLUMN phone;
+
+-- 36. Create table teachers(id INT, name VARCHAR(50), subject VARCHAR(50)).
+CREATE TABLE teachers(
+	id INT PRIMARY KEY, 
+	name VARCHAR(50),
+	subject VARCHAR(50)
+)
+-- 37. Rename table std to students.
+EXEC sp_rename 'STD', 'studentt'
+
+select * From studentt
+
+-- 38. Drop table teachers.
+DROP TABLE teachers;
+
+-- 39. Truncate table students.
+TRUNCATE TABLE teachers
+
+-- 40. Add column phone VARCHAR(15).
+ALTER TABLE teachers
+ADD phone VARCHAR(15)
+
+select * FROM teachers
+
