@@ -352,3 +352,24 @@ FROM Student s
 INNER JOIN Mark m
 ON s.student_id = m.student_id
 WHERE s.last_name = 'Sharma'
+
+-- 17 Display students with marks greater than 85.
+SELECT s.first_name, s.last_name, m.subject, m.marks
+FROM Student s
+INNER JOIN Mark m
+ON s.student_id = m.student_id
+WHERE m.marks > 90
+
+-- 18 Show students who appeared for Math and scored >70.
+SELECT s.first_name, s.last_name, m.subject, m.marks
+FROM Student s
+INNER JOIN Mark m
+ON s.student_id = m.student_id
+WHERE m.subject = 'Math' AND m.marks > 70
+
+-- 19 Show students whose marks are between 60 and 80.
+SELECT s.first_name, s.last_name, m.subject, m.marks
+FROM Student s
+INNER JOIN Mark m
+ON s.student_id = m.student_id
+WHERE m.marks BETWEEN 60 AND 90
