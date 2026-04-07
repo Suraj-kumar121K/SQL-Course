@@ -1,10 +1,7 @@
 # SQL Ultimate Course
-
 Welcome to the **SQL Ultimate Course** repository! 🚀   
 This course will cover everything you need to master SQL! 
-
 ---
-
 ## 🛠️ Important Links & Tools:
 
 Everything is for Free!
@@ -23,6 +20,8 @@ sql-ultimate-course/
 ├── docs/                               # course documentation and architecture details
 │
 └── scripts/                            # All codes presented in the course
+|
+|__ Hospital_Management_System          # 
 ```
 
 ---
@@ -34,7 +33,7 @@ sql-ultimate-course/
 
   Hospitals interact with a lot of people in a day and there are various activities involved in day to day operations of hospitals, for example managing doctor schedules,managing patient diagnoses, managing medical histories of patients, etc. The aim of this project is to show how data related to these tasks can be made easier to manage using databases.
 
-  By storing information in a relational database, all the tasks relate to daily functioning of the hospital can be performed easily and much more efficiently. Hospital Database Management System (DBMS) is a comprehensive SQL project designed to streamline and optimize the management of hospital operations. This project aims to provide an efficient and user-friendly solution for storing, retrieving, and manipulating various types of healthcare-related data.
+By storing information in a relational database, all the tasks relate to daily functioning of the hospital can be performed easily and much more efficiently. Hospital Database Management System (DBMS) is a comprehensive SQL project designed to streamline and optimize the management of hospital operations. This project aims to provide an efficient and user-friendly solution for storing, retrieving, and manipulating various types of healthcare-related data.
 ---
 ### This database contains 7 tables:
 1. Physician
@@ -51,4 +50,4 @@ This course is licensed under the [MIT License](LICENSE). You are free to use, m
 
 ## 🌟 About Me
 
-Hi there! I'm **Suraj Kumar5**, also known as **Data With Suraj**. I’m an IT professional and passionate Data Analysis  on a mission to  knowledge and make working with data enjoyable and engaging!
+Hi there! I'm **Suraj Kumar**, also known as **Data With Suraj**. I’m an IT professional and passionate Data Analysis  on a mission to  knowledge and make working with data enjoyable and engaging!
